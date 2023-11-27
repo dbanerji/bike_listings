@@ -23,3 +23,7 @@ def new_listing(request):
 def detail(request, detail_id):
     detail = Listing.objects.get(id=detail_id)
     return render(request, 'listing/detail.html', {'detail': detail})
+
+def my_listing(request):
+    my_listing = Listing.objects.order_by('-list_date')
+    return render(request,'listing/my_listing.html',{'my_listing':my_listing})

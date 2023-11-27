@@ -1,0 +1,37 @@
+{% extends "listing/base.html" %}
+{% block content %}
+<div class="row">
+	<div class="col">
+		<div class="card">
+			<table class="table">
+				<tr>
+					<th>Product</th>
+					<th>Date Listed</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+
+				{% for my_list in my_listing %}
+
+				<tr>
+					<td>{{ my_list.title }}</td>
+					<td>{{ my_list.list_date }}</td>
+					<td><a class="btn" href="{% url 'listing:detail' my_list.id %}">View</a></td>
+					<td></td>
+					<td><a class="btn" href="">Edit</a></td>
+					<td><a class="btn" href="">Delete</a></td>
+				</tr>
+
+				{% endfor %}
+
+			</table>
+			<div class="container">
+				<a class="btn" href="{% url 'listing:new_listing'%}"> New Listing</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
