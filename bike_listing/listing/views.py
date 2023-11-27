@@ -19,3 +19,7 @@ def new_listing(request):
             form.save()
             return redirect('listing:all_listings')
     return render(request,'listing/new_listing.html',{'form':form})
+
+def detail(request, detail_id):
+    detail = Listing.objects.get(id=detail_id)
+    return render(request, 'listing/detail.html', {'detail': detail})

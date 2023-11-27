@@ -1,3 +1,6 @@
+{% extends "listing/base.html"%}
+{%block content%}
+
 <h1>NEW LISTING</h1>
 
 <form action="{% url 'listing:new_listing' %}" method='post' enctype="multipart/form-data">
@@ -7,3 +10,5 @@
     </div>
     <button type="submit" class="btn">Create Listing</button>
 </form>
+
+{% endblock content %}
